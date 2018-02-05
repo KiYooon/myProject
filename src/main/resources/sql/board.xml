@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<insert id="insert" parameterType="hashmap">
+		insert into board (title, contents) values (#{title}, #{contents})
+	</insert>
+	<select id="selectList" resultType="hashmap" parameterType="hashmap">
+		select * from board
+	</select>
+	<select id="boardCourse" resultType="hashmap" parameterType="hashmap">
+		select * from boardCourse where boardNo = #{no}
+	</select>
+	<select id="selectOne" resultType="hashmap" parameterType="hashmap">
+		select b.*, u.email from board b inner join user u on (b.userNo = u.no) where b.no = #{no}
+	</select>
+	<update id="update" parameterType="hashmap">
+		update board
+		set title = #{title},
+		    contents    = #{contents}
+		    
+		where no = #{no}
+	</update>
+	<update id="delete" parameterType="hashmap">
+		update board
+		set del_yn = 'Y'
+		where no = #{no}
+	</update>
+	<insert id="insertReview" parameterType="hashmap">
+		insert into review (content, boardNo, name) values (#{content}, #{no}, #{name})
+	</insert>
+	<select id="reviewList" resultType="hashmap" parameterType="hashmap">
+		select *,DATE_FORMAT(date, '%Y-%m-%d') as fdata  from review where boardNo = #{no}
+	</select>
+</mapper>

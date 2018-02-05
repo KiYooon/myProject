@@ -1,0 +1,55 @@
+    <hr>
+    <modal></modal>
+    <div class="container">
+            <div class="col-sm-3"></div>
+            
+            <div class="selectBar col-sm-9">
+					<form class="form-inline">
+					    <div class="form-group">
+						    <label >Search</label>
+		           				<input type="text" ng-model="search" class="form-control" placeholder="Search">
+	        			</div>
+    				</form>
+            </div>        
+    </div>
+    
+	<div class="container">
+	    <div class="row" id="boardList">
+	        <div class="row" data-ng-repeat="rows in dataSource|filter:search|limitTo : viewRow : start" data-ng-click="detail(rows)"> 
+	            <div class="col-xs-12 col-sm-3 col-md-3" style="height:190px;">
+	                    <img data-ng-src="{{rows.picPath+rows.picName}}" class="img-responsive img-box img-thumbnail" style="height:100%;"> 
+	            </div> 
+	            <div class="col-xs-12 col-sm-9 col-md-9">
+	                <div class="list-group">
+	                    <div class="list-group-item">
+	                        <div class="row-guide">
+	                            <small>
+	                                {{rows.name}} 
+	                            </small>
+	                        </div>
+	                        <hr>
+	                        <div class="row-content">
+	                          	{{rows.title}}
+	                        </div>
+	                    </div>
+	                </div>
+	            </div> 
+	        </div><hr>
+	    </div>
+	</div>
+    
+	<div class="container text-center">
+		<div class="page">
+<!-- 			<ul> -->
+<!-- 				<li data-ng-repeat="rows in pageArry" data-ng-class="{pageBg : pageNum == ($index + 1)}" data-ng-click="pageEvent($index)">{{$index + 1}}</li> -->
+<!-- 			</ul> -->
+	    	<a data-ng-href="" data-ng-repeat="rows in pageArry" data-ng-class="{pageBg : pageNum == ($index + 1)}" data-ng-click="pageEvent($index)">{{$index + 1}}</a>
+	    </div>
+	</div>
+	
+	<footer class="container-fluid text-center">
+      <p>by 박기윤</p>
+	</footer>
+
+
+    

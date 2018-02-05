@@ -1,0 +1,27 @@
+<hr>
+<modal></modal>
+<div class="container">
+  <h1>SignUp</h1>
+	<form name="signupForm" data-ng-submit="addUser()">
+	  <div class="form-group">
+	    <label for="id">아이디</label>
+	    <input type="text" id="ID" class="form-control" name="id" placeholder="사용하실 아이디를 입력해주세요." data-ng-model="signUpinfo.id">
+	  </div>
+	  <div class="form-group">
+	    <label for="pw">암호</label>
+	    <input type="password" id="PW" class="form-control" name="pw" placeholder="사용하실 비밀번호를 입력해주세요." data-ng-model="signUpinfo.pw">
+	  </div>
+	  <div class="form-group">
+	    <label for="name">이름</label>
+	    <input type="text" id="NAME" class="form-control" name="name" placeholder="이름" data-ng-model="signUpinfo.name">
+	  </div>
+	  <div class="form-group">
+	    <label for="email">이메일</label>
+	    <input type="email" id="EMAIL" class="form-control" name="email" placeholder="이메일" data-ng-model="signUpinfo.email">
+	  </div>
+	  
+	  <div class="text-right">
+	  	<button type="submit" class="btn btn-success">가입</button>
+	  </div>
+	</form>
+</div>

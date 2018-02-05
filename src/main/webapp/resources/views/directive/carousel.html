@@ -1,0 +1,26 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="{{$index}}" data-ng-class="{active : rows.type}" data-ng-repeat="rows in carouselData"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item" data-ng-class="{active : rows.type}" data-ng-repeat="rows in carouselData">
+        <img data-ng-src="{{rows.url}}" alt="Image">    
+      </div>
+
+      
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" data-ng-href="" role="button" data-ng-click="slideEvent('prev')">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" data-ng-href="" role="button" data-ng-click="slideEvent('next')">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+  

@@ -1,0 +1,18 @@
+<hr>
+<modal></modal>
+<div class="container">
+  <h1>Login</h1>
+	<form name="loginForm" data-ng-submit="login()">
+	  <div class="form-group">
+	    <label for="id">ID :</label>
+	    <input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요" data-ng-model="user.id">
+	  </div>
+	  <div class="form-group">
+	    <label for="password">Password :</label>
+	    <input type="password" class="form-control" name="password" placeholder="암호" data-ng-model="user.pw">
+	  </div>
+	  <div class="text-right">
+	  	<button type="submit" class="btn btn-default">로그인</button>
+	  </div>
+	</form>
+</div>
